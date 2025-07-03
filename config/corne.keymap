@@ -8,18 +8,13 @@
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/bt.h>
 
-/ {
-  chosen {
-    zmk,matrix-transform = &five_column_transform;
-  };
-};
+#include "zmk-helpers/helper.h"
+#include "zmk-helpers/key-labels/36.h"
 
-/ {
-  keymap {
-    compatible = "zmk,keymap";
 
-    default_layer {
-      bindings = <
+ZMK_APPLY_MATRIX_TRANSFORM(five_column_transform)
+
+ZMK_LAYER(default_layer,
 // ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮   ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮
      &kp Q         &kp W         &kp E         &kp R         &kp T             &kp Y         &kp U         &kp I         &kp O         &kp P
 // ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
@@ -27,9 +22,6 @@
 // ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
      &kp Z         &kp X         &kp C         &kp V         &kp B             &kp N         &kp M         &kp COMMA     &kp DOT       &kp FSLH
 // ╰─────────────┴─────────────┴─────────────┴─────────────┴─────────────┤   ├─────────────┴─────────────┴─────────────┴─────────────┴─────────────╯
-                                 &kp ESC       &kp TAB       &kp SPACE         &kp LSHFT      &kp BSPC      &kp RET
+                                 &kp ESC       &kp TAB       &kp SPACE         &kp LSHFT     &kp BSPC      &kp RET
 //                             ╰─────────────┴─────────────┴─────────────╯   ╰─────────────┴─────────────┴─────────────╯
-      >;
-    };
-  };
-};
+)
