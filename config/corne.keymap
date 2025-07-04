@@ -39,6 +39,14 @@ ZMK_HOLD_TAP(hmr,
     hold-trigger-on-release;
 )
 
+/* Tap-preferred */
+ZMK_BEHAVIOR(tp, hold_tap,
+    flavor = "tap-preferred";
+    tapping-term-ms = <200>;
+    quick-tap-ms = <175>;
+    bindings = <&kp>, <&kp>;
+)
+
 ZMK_APPLY_MATRIX_TRANSFORM(five_column_transform)
 
 ZMK_LAYER(Base,
@@ -49,7 +57,7 @@ ZMK_LAYER(Base,
 // ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
      &kp Z         &kp X         &kp C         &kp V         &kp B             &kp N         &kp M         &kp COMMA     &kp DOT       &kp FSLH
 // ╰─────────────┴─────────────┴─────────────┴─────────────┴─────────────┤   ├─────────────┴─────────────┴─────────────┴─────────────┴─────────────╯
-                                 &kp ESC       &lt 1 TAB     &mt HYPR SPACE    &kp LSHFT     &kp BSPC      &kp RET
+                                 &kp ESC       &lt 1 TAB     &tp HYPR SPACE    &kp LSHFT     &kp BSPC      &kp RET
 //                             ╰─────────────┴─────────────┴─────────────╯   ╰─────────────┴─────────────┴─────────────╯
 )
 
