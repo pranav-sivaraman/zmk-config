@@ -28,6 +28,12 @@ ZMK_HOLD_TAP(hml,
     hold-trigger-on-release;
 )
 
+#define BASE 0
+#define SYS 1
+#define NUM 2
+#define SYM 3
+
+
 /* Right-hand HRMs. */
 ZMK_HOLD_TAP(hmr,
     flavor = "balanced";
@@ -57,7 +63,7 @@ ZMK_LAYER(Base,
 // ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
      &kp Z         &kp X         &kp C         &kp V         &kp B             &kp N         &kp M         &kp COMMA     &kp DOT       &kp FSLH
 // ╰─────────────┴─────────────┴─────────────┴─────────────┴─────────────┤   ├─────────────┴─────────────┴─────────────┴─────────────┴─────────────╯
-                                 &lt 2 ESC     &lt 1 TAB     &kp SPACE         &kp LSHFT     &lt 3 BSPC     &lt 4 RET
+                                 &lt NUM ESC   &lt SYM TAB   &kp SPACE         &kp LSHFT     &kp BSPC      &lt SYS RET
 //                             ╰─────────────┴─────────────┴─────────────╯   ╰─────────────┴─────────────┴─────────────╯
 )
 
