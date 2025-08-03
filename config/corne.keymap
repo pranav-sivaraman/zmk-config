@@ -15,7 +15,21 @@
 #define KEYS_R RT0 RT1 RT2 RT3 RT4 RM0 RM1 RM2 RM3 RM4 RB0 RB1 RB2 RB3 RB4  // Right-hand keys.
 #define THUMBS LH2 LH1 LH0 RH0 RH1 RH2                                      // Thumb keys.
 
+#define COMBO_TERM_FAST 18
+#define COMBO_TERM_SLOW 30
+
+#define COMBO_IDLE_FAST 150
+#define COMBO_IDLE_SLOW 50
+
 #define HYPR LC(LS(LA(LGUI)))
+
+#define BASE 0
+#define SYS 1
+#define NUM 2
+#define SYM 3
+
+/* Horizontal combos - left hand */
+ZMK_COMBO(esc,   &kp ESC,  <LT3 LT2>,     DEF NAV NUM, COMBO_TERM_FAST, COMBO_IDLE_FAST)
 
 /* Left-hand HRMs. */
 ZMK_HOLD_TAP(hml,
@@ -27,20 +41,6 @@ ZMK_HOLD_TAP(hml,
     hold-trigger-key-positions = <KEYS_R THUMBS>;
     hold-trigger-on-release;
 )
-
-#define BASE 0
-#define SYS 1
-#define NUM 2
-#define SYM 3
-
-#define COMBO_TERM_FAST 18
-#define COMBO_TERM_SLOW 30
-
-#define COMBO_IDLE_FAST 150
-#define COMBO_IDLE_SLOW 50
-
-/* Horizontal combos - left hand */
-ZMK_COMBO(esc,   &kp ESC,      LT3 LT2,     DEF NAV NUM, COMBO_TERM_FAST, COMBO_IDLE_FAST)
 
 /* Right-hand HRMs. */
 ZMK_HOLD_TAP(hmr,
