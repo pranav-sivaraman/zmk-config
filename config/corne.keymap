@@ -25,7 +25,7 @@
 
 #define BASE 0
 #define SYS 1
-#define  2
+#define NUM 2
 #define SYM 3
 
 /* Horizontal combos - left hand */
