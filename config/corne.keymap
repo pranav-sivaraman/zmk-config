@@ -25,8 +25,9 @@
 
 #define BASE 0
 #define SYS 1
-#define NUM 2
-#define SYM 3
+#define NAV 2
+#define FN 3
+#define GAME 4
 
 /* Left-hand HRMs. */
 ZMK_HOLD_TAP(hml,
@@ -57,6 +58,8 @@ ZMK_BEHAVIOR(tp, hold_tap,
     quick-tap-ms = <175>;
     bindings = <&kp>, <&kp>;
 )
+
+ZMK_COMBO(esc, &kp ESC, RM2 RM3, BASE, COMBO_TERM_FAST, COMBO_IDLE_FAST)
 
 ZMK_APPLY_MATRIX_TRANSFORM(five_column_transform)
 
