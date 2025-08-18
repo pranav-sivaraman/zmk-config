@@ -28,6 +28,7 @@
 #define FN 2
 #define NAV 3
 #define NUM 4
+#define GAME 5
 
 /* Left-hand HRMs. */
 ZMK_HOLD_TAP(hml,
@@ -75,6 +76,8 @@ ZMK_COMBO(at, &kp AT, LM4 LM3, BASE, COMBO_TERM_FAST, COMBO_IDLE_FAST)
 ZMK_COMBO(pipe, &kp PIPE, LM3 LM2, BASE, COMBO_TERM_FAST, COMBO_IDLE_FAST)
 ZMK_COMBO(equal, &kp EQUAL, LM2 LM1, BASE, COMBO_TERM_FAST, COMBO_IDLE_FAST)
 
+ZMK_COMBO(game, &to GAME, LH0 RH0, BASE GAME, COMBO_TERM_FAST, COMBO_IDLE_FAST)
+
 ZMK_APPLY_MATRIX_TRANSFORM(five_column_transform)
 
 ZMK_LAYER(Base,
@@ -85,7 +88,7 @@ ZMK_LAYER(Base,
 // ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
      &kp Z         &kp X         &kp C         &kp V         &kp B             &kp N         &kp M         &kp COMMA     &kp DOT       &kp FSLH
 // ╰─────────────┴─────────────┴─────────────┴─────────────┴─────────────┤   ├─────────────┴─────────────┴─────────────┴─────────────┴─────────────╯
-                                 &lt NAV ESC   &lt NUM TAB    &kp SPACE         &kp LSHFT    &lt FN BSPC   &lt SYS RET
+                                 &lt FN ESC    &lt NUM TAB   &kp SPACE         &kp LSHFT    &lt NAV BSPC   &lt SYS RET
 //                             ╰─────────────┴─────────────┴─────────────╯   ╰─────────────┴─────────────┴─────────────╯
 )
 
@@ -139,7 +142,20 @@ ZMK_LAYER(Num,
 )
 
 
-/* ZMK_LAYER(Fn, */
+ZMK_LAYER(Game,
+// ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮   ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮
+     &trans        &trans        &trans        &trans        &trans            &trans        &trans        &trans        &trans        &trans
+// ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
+     &kp A         &kp S         &kp D         &kp F         &kp G             &kp H         &kp J         &kp K         &kp L         &kp SEMI
+// ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
+     &trans        &trans        &trans        &trans        &trans            &trans        &trans        &trans        &trans        &trans
+// ╰─────────────┴─────────────┴─────────────┴─────────────┴─────────────┤   ├─────────────┴─────────────┴─────────────┴─────────────┴─────────────╯
+                                 &trans        &trans        &trans            &trans        &trans        &trans
+//                             ╰─────────────┴─────────────┴─────────────╯   ╰─────────────┴─────────────┴─────────────╯
+)
+
+
+/* ZMK_LAYER(Template, */
 /* // ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮   ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮ */
 /*      &trans        &trans        &trans        &trans        &trans            &trans        &trans        &trans        &trans        &trans */
 /* // ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ */
