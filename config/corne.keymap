@@ -80,6 +80,10 @@ ZMK_COMBO(game, &tog GAME, LH0 RH0, BASE GAME, COMBO_TERM_FAST, COMBO_IDLE_FAST)
 
 ZMK_APPLY_MATRIX_TRANSFORM(five_column_transform)
 
+&lt {
+  quick-tap-ms = <150>;
+}
+
 ZMK_LAYER(Base,
 // ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮   ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮
      &kp Q         &kp W         &kp E         &kp R         &kp T             &kp Y         &kp U         &kp I         &kp O         &kp P
