@@ -62,12 +62,32 @@ ZMK_BEHAVIOR(tp, hold_tap,
 
 / {
     behaviors {
-        /* Generic layer-tap-dance behavior */
-        ltd: ltd {
+        td_fn_esc: td_fn_esc {
             compatible = "zmk,behavior-tap-dance";
-            #binding-cells = <2>;
+            #binding-cells = <0>;
             tapping-term-ms = <200>;
-            bindings = <&kp 0>, <&kp 0>, <&lt 0 0>;
+            bindings = <&kp ESC>, <&kp ESC>, <&lt FN ESC>;
+        };
+        
+        td_num_tab: td_num_tab {
+            compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            tapping-term-ms = <200>;
+            bindings = <&kp TAB>, <&kp TAB>, <&lt NUM TAB>;
+        };
+        
+        td_nav_bspc: td_nav_bspc {
+            compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            tapping-term-ms = <200>;
+            bindings = <&kp BSPC>, <&kp BSPC>, <&lt NAV BSPC>;
+        };
+
+        td_sys_ret: td_sys_ret {
+            compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            tapping-term-ms = <200>;
+            bindings = <&kp RET>, <&kp RET>, <&lt SYS RET>;
         };
     };
 };
@@ -100,7 +120,7 @@ ZMK_LAYER(Base,
 // ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
      &kp Z         &kp X         &kp C         &kp V         &kp B             &kp N         &kp M         &kp COMMA     &kp DOT       &kp FSLH
 // ╰─────────────┴─────────────┴─────────────┴─────────────┴─────────────┤   ├─────────────┴─────────────┴─────────────┴─────────────┴─────────────╯
-                                 &ltd FN ESC   &ltd NUM TAB  &kp SPACE         &kp LSHFT    &ltd NAV BSPC  &ltd SYS RET
+                                 &td_fn_esc    &td_num_tab   &kp SPACE         &kp LSHFT    &td_nav_bspc   &td_sys_ret
 //                             ╰─────────────┴─────────────┴─────────────╯   ╰─────────────┴─────────────┴─────────────╯
 )
 
