@@ -60,6 +60,13 @@ ZMK_BEHAVIOR(tp, hold_tap,
     bindings = <&kp>, <&kp>;
 )
 
+/* Generic layer-tap-dance behavior */
+ZMK_BEHAVIOR(ltd, tap_dance,
+    #binding-cells = <2>;
+    tapping-term-ms = <200>;
+    bindings = <&kp 0>, <&kp 0>, <&lt 0 0>;
+)
+
 /*                KEY POSITIONS
 
   ╭─────────────────────╮ ╭─────────────────────╮
@@ -88,7 +95,7 @@ ZMK_LAYER(Base,
 // ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
      &kp Z         &kp X         &kp C         &kp V         &kp B             &kp N         &kp M         &kp COMMA     &kp DOT       &kp FSLH
 // ╰─────────────┴─────────────┴─────────────┴─────────────┴─────────────┤   ├─────────────┴─────────────┴─────────────┴─────────────┴─────────────╯
-                                 &lt FN ESC    &lt NUM TAB   &kp SPACE         &kp LSHFT    &lt NAV BSPC   &lt SYS RET
+                                 &ltd FN ESC   &ltd NUM TAB  &kp SPACE         &kp LSHFT    &ltd NAV BSPC  &ltd SYS RET
 //                             ╰─────────────┴─────────────┴─────────────╯   ╰─────────────┴─────────────┴─────────────╯
 )
 
