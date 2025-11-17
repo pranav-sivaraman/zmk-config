@@ -80,9 +80,14 @@ ZMK_COMBO(game, &tog GAME, LH0 RH0, BASE GAME, COMBO_TERM_FAST, COMBO_IDLE_FAST)
 
 ZMK_APPLY_MATRIX_TRANSFORM(five_column_transform)
 
-&lt {
-  quick-tap-ms = <150>;
-}
+/* General-purpose layer-tap that supports double-tap → tap-hold */
+ZMK_HOLD_TAP(ltc,
+    flavor = "balanced";
+    tapping-term-ms = <220>;
+    quick-tap-ms = <150>;
+    require-prior-idle-ms = <0>;
+    bindings = <&kp>, <&mo>;
+)
 
 ZMK_LAYER(Base,
 // ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮   ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮
@@ -92,7 +97,7 @@ ZMK_LAYER(Base,
 // ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
      &kp Z         &kp X         &kp C         &kp V         &kp B             &kp N         &kp M         &kp COMMA     &kp DOT       &kp FSLH
 // ╰─────────────┴─────────────┴─────────────┴─────────────┴─────────────┤   ├─────────────┴─────────────┴─────────────┴─────────────┴─────────────╯
-                                 &lt FN ESC    &lt NUM TAB   &kp SPACE         &kp LSHFT    &lt NAV BSPC   &lt SYS RET
+                                 &ltc FN ESC   &ltc NUM TAB  &kp SPACE         &kp LSHFT     &ltc NAV BSPC &ltc SYS RET
 //                             ╰─────────────┴─────────────┴─────────────╯   ╰─────────────┴─────────────┴─────────────╯
 )
 
